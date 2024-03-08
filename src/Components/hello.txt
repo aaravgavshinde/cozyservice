@@ -1,0 +1,18 @@
+const services = [
+        { name: "Tiffin" },
+        { name: "Electrician" },
+        { name: "Plumber" },
+        { name: "Maid" },
+        { name: "Painter" },
+        { name: "Laptop reparing" },
+        { name: "Carpenter" },
+        { name: "Water service" },
+        { name: "Vehicle" },
+        { name: "Room" },
+        { name: "Dress" },
+        { name: "Cooler" },
+        { name: "Doctor" },
+        { name: "Restaurent" },
+        { name: "MP-online" },
+        { name: "Auto-rickshaw" },
+    ];
