@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './HERO.css'
 
-export default function HERO() {
+export default function HERO(props) {
 
   const [index, setIndex] = useState(0);
 
@@ -23,8 +23,8 @@ export default function HERO() {
       <div className='hero-left-section'>
         <div className='hero-main-heading'>We Help You Contact <span>Service Providers</span> Nearby!</div>
         <div>
-          <a href=""><button className='services-btn'>Services</button></a>
-          <a href=""><button className='provide-service-btn'>Provide Service</button></a>
+          <a onClick={props.compoA}><button className='services-btn'>Services</button></a>
+          <a href="/apply"><button className='provide-service-btn'>Provide Service</button></a>
         </div>
         <div className='hero-content'>Contact service providers, find houses for rent, details of libraries in the locality.. and much more</div>
       </div>
