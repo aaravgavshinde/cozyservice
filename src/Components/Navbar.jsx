@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
+import { useLocation } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [searchInput, setSearchInput] = useState('');
   const [filteredServices, setFilteredServices] = useState([]);
   const [inputClicked, setInputClicked] = useState(false);
@@ -56,23 +57,27 @@ export default function Navbar() {
     };
   }, []);
 
+  // Check if the current location matches a specific route where we want to hide the navbar
+  const location = useLocation();
+  const hideLink = location.pathname === '/apply' || location.pathname === '/aboutus';
+
   return (
     <div className='navbar-main-div'>
       <div className='logo-box'>
-        <img src='images/logo.png' alt='logo' />
+      <a href=""><img src='images/logo.png' alt='logo' /></a>
       </div>
       <ul>
         <li>
-          <a href=''>HOME</a>
+          <a href='/'>HOME</a>
+        </li>
+        {!hideLink &&<li>
+          <a onClick={props.compoA}>SERVICES</a>
+        </li>}
+        <li>
+          <a href='/apply'>APPLY AS SERVICE PERSON</a>
         </li>
         <li>
-          <a href=''>SERVICES</a>
-        </li>
-        <li>
-          <a href=''>APPLY AS SERVICE PERSON</a>
-        </li>
-        <li>
-          <a href=''>ABOUT US</a>
+          <a href='/aboutus'>ABOUT US</a>
         </li>
       </ul>
       <div className='search-box' ref={searchBoxRef}>
@@ -94,7 +99,7 @@ export default function Navbar() {
                   </div>
                 ))
               ) : (
-                <li>No results found</li>
+                <div>No results found</div>
               )
             ) : (
               services.map((service, index) => (

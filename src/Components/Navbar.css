@@ -42,6 +42,11 @@ ul li {
 ul li a {
     text-decoration: none;
     color: inherit;
+    transition: 0.2s;
+    cursor: pointer;
+}
+ul li a:hover {
+    color: #6575a2;
 }
 
 .search-box input {
@@ -60,25 +65,29 @@ ul li a {
 }
 
 .search-links {
-    border: 1px solid #72727284;
+    border: 1px solid #253257;
     position: absolute;
     z-index: 1;
     background-color: #edffed;
     width: 200px;
+    border-radius: 5px;
 }
 
 .search-links div {
     display: grid;
-    justify-content: left;
-    margin-left: 0px;
+    justify-content: center;
+    border: 1px solid #bcffbc;
+    transition: 0.3s;
+}
+
+.search-links div:hover {
+    background-color: #b9ffb9;
 }
 
 .search-links div div {
     color: #253257;
     margin: 4px;
     cursor: pointer;
-}
-
-.search-links div div:hover {
-    background-color: #9fff9f;
+    font-size: 18px;
+    border: none;
 }

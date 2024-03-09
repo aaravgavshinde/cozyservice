@@ -1,9 +1,9 @@
 import React from 'react'
 import './Services.css'
 
-export default function Services() {
+export default function Services({componentRef}) {
     return (
-        <div className='services-main-div'>
+        <div className='services-main-div' ref={componentRef}>
             {/* At Home Services */}
             <h1>AT HOME SERVICES</h1>
             <hr />
