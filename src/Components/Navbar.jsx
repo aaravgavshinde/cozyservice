@@ -59,7 +59,7 @@ export default function Navbar(props) {
 
   // Check if the current location matches a specific route where we want to hide the navbar
   const location = useLocation();
-  const hideLink = location.pathname === '/apply' || location.pathname === '/aboutus';
+  const showLink = location.pathname === '/';
 
   return (
     <div className='navbar-main-div'>
@@ -70,7 +70,7 @@ export default function Navbar(props) {
         <li>
           <a href='/'>HOME</a>
         </li>
-        {!hideLink &&<li>
+        {showLink &&<li>
           <a onClick={props.compoA}>SERVICES</a>
         </li>}
         <li>
