@@ -19,6 +19,7 @@ export default function Electrician() {
             <hr />
             <div className='details-description'>Looking for an electrician to work at your home? Here are details for the ones in Vidisha.</div>
             <div className='details-box'>
+
                 {details.map((detail, index) => (
                     <div className='detail' key={index}>
                         <img src="images/user.png" alt="user" />
@@ -31,6 +32,7 @@ export default function Electrician() {
                             </ul>
                         </div>
                     </div>))}
+                    
             </div>
         </div>
     )

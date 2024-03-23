@@ -8,18 +8,19 @@ export default function Footer() {
                 <div>
                     <div className='footer-heading'>Quick Links</div>
                     <ul className='footer-links'>
-                        <a href=""><li>HOME</li></a>
+                        <a ><li>HOME</li></a>  
+                        {/* onClick={scrollToTop} */}
                         <a href=""><li>SERVICES</li></a>
-                        <a href=""><li>ABOUT US</li></a>
+                        <a href="/aboutus"><li>ABOUT US</li></a>
                     </ul>
                 </div>
                 <div>
                     <div className='footer-heading'>Popular Services</div>
                     <ul className='footer-links'>
-                        <a href=""><li>TIFFIN SERVICE</li></a>
-                        <a href=""><li>WATER SERVICE</li></a>
-                        <a href=""><li>ELECTRICIAN</li></a>
-                        <a href=""><li>RENT COOLER</li></a>
+                        <a href="/tiffin"><li>TIFFIN SERVICE</li></a>
+                        <a href="/water"><li>WATER SERVICE</li></a>
+                        <a href="/electrician"><li>ELECTRICIAN</li></a>
+                        <a href="/cooler"><li>RENT COOLER</li></a>
                     </ul>
                 </div>
                 <div>
