@@ -12,7 +12,6 @@
 .hero-left-section{
     text-align: left;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     margin: 10px;
 }
 
@@ -64,6 +63,7 @@
 
 .hero-content{
     color: #253257;
+    margin-top: 100px;
 }
 
 /* Right Section */
@@ -75,4 +75,36 @@
     width: 100px;
     height: auto;
     border-radius: 10px;
+}
+
+@media screen and (min-width: 1221px) and (max-width: 1400px) {
+    .hero-content{
+        margin-top: 50px;
+    }
+    .hero-main-div{
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+@media screen and (min-width: 760px) and (max-width: 1221px) {
+    .hero-content{
+        margin-top: 50px;
+    }
+    .hero-main-div{
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 760px) {
+    .hero-content{
+        margin-top: 50px;
+    }
+    .hero-main-div{
+        grid-template-columns: 1fr;
+    }
+    .hero-main-heading{
+        text-align: center;
+        font-size: 40px;
+    }
+    .hero-buttons{
+        margin: auto;
+    }
 }

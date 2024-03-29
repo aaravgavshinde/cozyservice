@@ -9,23 +9,23 @@ export default function Navbar(props) {
   const searchBoxRef = useRef(null);
 
   const services = [
-    { name: "Tiffin" },
-    { name: "Electrician" },
-    { name: "Plumber" },
-    { name: "Maid" },
-    { name: "Painter" },
-    { name: "Laptop reparing" },
-    { name: "Carpenter" },
-    { name: "Water service" },
-    { name: "Vehicle" },
-    { name: "Room" },
-    { name: "Dress" },
-    { name: "Cooler" },
-    { name: "Doctor" },
-    { name: "Restaurent" },
-    { name: "MP-online" },
-    { name: "Auto-rickshaw" },
-];
+    { name: "Tiffin", link: "/tiffin" },
+    { name: "Electrician", link: "/electrician" },
+    { name: "Plumber", link: "/plumber" },
+    { name: "Maid", link: "/maid" },
+    { name: "Painter", link: "/painter" },
+    { name: "Laptop reparing", link: "/laptop" },
+    { name: "Carpenter", link: "/carpenter" },
+    { name: "Water service", link: "/water" },
+    { name: "Vehicle", link: "/vehicle" },
+    { name: "Room", link: "/room" },
+    { name: "Dress", link: "/dress" },
+    { name: "Cooler", link: "/cooler" },
+    { name: "Doctor", link: "/doctor" },
+    { name: "Mess", link: "/mess" },
+    { name: "MP-online", link: "/mponline" },
+    { name: "Auto-rickshaw", link: "/auto" },
+  ];
 
   const handleChange = (e) => {
     const input = e.target.value;
@@ -39,8 +39,11 @@ export default function Navbar(props) {
     setFilteredServices(filtered);
   };
 
-  const handleInputClick = () => {
+  const handleInputEnter = () => {
     setInputClicked(true);
+  };
+  const handleInputLeave = () => {
+    setInputClicked(false);
   };
 
   const handleClickOutside = (e) => {
@@ -64,17 +67,17 @@ export default function Navbar(props) {
   return (
     <div className='navbar-main-div'>
       <div className='logo-box'>
-      <a href=""><img src='images/logo.png' alt='logo' /></a>
+        <a href=""><img src='images/logo.png' alt='logo' /></a>
       </div>
       <ul>
         <li>
           <a href='/'>HOME</a>
         </li>
-        {showLink &&<li>
+        {showLink && <li>
           <a onClick={props.compoA}>SERVICES</a>
         </li>}
         <li>
-          <a href='/apply'>APPLY AS SERVICE PERSON</a>
+          <a href='/apply'>APPLY</a>
         </li>
         <li>
           <a href='/aboutus'>ABOUT US</a>
@@ -82,7 +85,8 @@ export default function Navbar(props) {
       </ul>
       <div className='search-box' ref={searchBoxRef}>
         <input
-          onClick={handleInputClick}
+          onMouseEnter={handleInputEnter}
+          onMouseLeave={handleInputLeave}
           onChange={handleChange}
           value={searchInput}
           type='text'
@@ -95,7 +99,7 @@ export default function Navbar(props) {
               filteredServices.length > 0 ? (
                 filteredServices.map((service, index) => (
                   <div key={index}>
-                    <div><a href="">{service.name}</a></div>
+                    <div><a href={service.link}>{service.name}</a></div>
                   </div>
                 ))
               ) : (
@@ -104,7 +108,7 @@ export default function Navbar(props) {
             ) : (
               services.map((service, index) => (
                 <div key={index}>
-                  <div><a href="">{service.name}</a></div>
+                  <div><a href={service.link}>{service.name}</a></div>
                 </div>
               ))
             )}

@@ -22,7 +22,7 @@ export default function HERO(props) {
       {/* Left Section */}
       <div className='hero-left-section'>
         <div className='hero-main-heading'>We Help You Contact <span>Service Providers</span> Nearby!</div>
-        <div>
+        <div className='hero-buttons'>
           <a onClick={props.compoA}><button className='services-btn'>Services</button></a>
           <a href="/apply"><button className='provide-service-btn'>Provide Service</button></a>
         </div>
