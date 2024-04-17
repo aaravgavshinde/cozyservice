@@ -1,7 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Footer.css'
 
 export default function Footer() {
+
+    const [uname, setUName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [service, setService] = useState('')
+
+    const collectData = async (e) => {
+        e.preventDefault();
+        let result = await fetch('http://localhost:8080/apply',{
+            method: 'post',
+            body: JSON.stringify({uname, phone, service}),
+            headers:{
+                'Content-Type':'application/json'
+            },
+        })
+        result = await result.json();
+        console.log(result)
+    }
+
     return (
         <div className='footer-main-div'>
             <div className="footer-content">
@@ -25,20 +43,20 @@ export default function Footer() {
                 </div>
                 <div className='footer-form-div'>
                     <div className='footer-heading'>Want to provide Services or Rent up your things? Drop down your details!</div>
-                    <form action="" className='footer-form'>
+                    <form action="post" className='footer-form'>
                         <div>
-                            <label htmlFor="name">Your Name:</label>
+                            <label name="name" value={uname} onChange={(e) => setUName(e.target.value)}>Your Name:</label>
                             <input type="text" />
                         </div>
                         <div>
-                            <label htmlFor="name">Phone Number:</label>
+                            <label name="phone" value={phone} onChange={(e) => setPhone(e.target.value)}>Phone Number:</label>
                             <input type="number" /></div>
                         <div>
-                            <label htmlFor="name">Service/Item Name:</label>
+                            <label name="service" value={service} onChange={(e) => setService(e.target.value)}>Service/Item Name:</label>
                             <input type="text" />
                         </div>
                     </form>
-                    <button className='footer-submit' type="submit">Submit</button>
+                    <button className='footer-submit' onClick={collectData} type="submit">Submit</button>
                 </div>
             </div>
             <hr className='footer-hr' />

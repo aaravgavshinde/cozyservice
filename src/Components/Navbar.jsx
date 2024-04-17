@@ -42,9 +42,6 @@ export default function Navbar(props) {
   const handleInputEnter = () => {
     setInputClicked(true);
   };
-  const handleInputLeave = () => {
-    setInputClicked(false);
-  };
 
   const handleClickOutside = (e) => {
     if (searchBoxRef.current && !searchBoxRef.current.contains(e.target)) {
@@ -86,7 +83,6 @@ export default function Navbar(props) {
       <div className='search-box' ref={searchBoxRef}>
         <input
           onMouseEnter={handleInputEnter}
-          onMouseLeave={handleInputLeave}
           onChange={handleChange}
           value={searchInput}
           type='text'
