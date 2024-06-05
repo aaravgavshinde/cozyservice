@@ -8,16 +8,26 @@ export default function Footer() {
     const [service, setService] = useState('')
 
     const collectData = async (e) => {
-        e.preventDefault();
-        let result = await fetch('http://localhost:80/apply', {
-            method: 'post',
-            body: JSON.stringify({ uname, phone, service }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-        result = await result.json();
-        console.log(result)
+        if (uname != '' && phone != '' && service != '') {
+            e.preventDefault();
+            let result = await fetch('http://localhost:80/apply', {
+                method: 'post',
+                body: JSON.stringify({ uname, phone, service }),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            result = await result.json();
+            console.log(result)
+            setUName('')
+            setPhone('')
+            setService('')
+
+            alert('Your info has been submitted!')
+        }
+        else{
+            alert('Please fill the form!')
+        }
     }
 
     return (
@@ -46,15 +56,15 @@ export default function Footer() {
                     <form action="post" className='footer-form'>
                         <div>
                             <label name="name">Your Name:</label>
-                            <input type="text" value={uname} onChange={(e) => setUName(e.target.value)} />
+                            <input type="text" value={uname} onChange={(e) => setUName(e.target.value)} required />
                         </div>
                         <div>
                             <label name="phone">Phone Number:</label>
-                            <input type="number" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                            <input type="number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
                         </div>
                         <div>
                             <label name="service">Service/Item Name:</label>
-                            <input type="text" value={service} onChange={(e) => setService(e.target.value)} />
+                            <input type="text" value={service} onChange={(e) => setService(e.target.value)} required />
                         </div>
                     </form>
                     <button className='footer-submit' onClick={collectData} type="submit">Submit</button>
