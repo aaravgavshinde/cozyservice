@@ -1,3 +1,41 @@
-h1{
-    margin-top: 130px;
+.apply-main-div{
+    width: 80%;
+    margin: 150px auto;
+}
+
+.apply-main-div h1{
+    color: #47598E;
+}
+
+.apply-content{
+    margin: 100px 30px;
+    text-align: left;
+}
+
+.apply-heading{
+    font-size: 30px;
+    color: #647cc6;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.apply-desc{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #18264f;
+}
+
+.apply-list{
+    display: grid;
+    justify-content: start;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.apply-list li{
+    list-style: circle;
+    font-size: 18px;
+    color: #18264f;
 }

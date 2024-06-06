@@ -8,26 +8,25 @@ export default function Footer() {
     const [service, setService] = useState('')
 
     const collectData = async (e) => {
-        if (uname != '' && phone != '' && service != '') {
-            e.preventDefault();
-            let result = await fetch('http://localhost:80/apply', {
-                method: 'post',
-                body: JSON.stringify({ uname, phone, service }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-            result = await result.json();
-            console.log(result)
-            setUName('')
-            setPhone('')
-            setService('')
-
-            alert('Your info has been submitted!')
-        }
-        else{
+        if (uname == '' || phone == '' || service == '') {
             alert('Please fill the form!')
         }
+        else{
+            e.preventDefault();
+        let result = await fetch('http://localhost:80/apply', {
+            method: 'post',
+            body: JSON.stringify({ uname, phone, service }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+        result = await result.json();
+        console.log(result)
+        setUName('')
+        setPhone('')
+        setService('')
+        alert('Your info has been submitted!')
+        } 
     }
 
     return (

@@ -5,16 +5,16 @@
 
 .back-to-home{
     text-align: left;
-    color: #47598E;
+    color: #858ca1;
     font-weight: 400;
-    font-size: 20px;
-    margin-top: 30px;
+    font-size: 16px;
+    margin-top: 130px;
 }
 
 .details-heading{
     color: #47598E;
     font-size: 35px;
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 .details-description{
@@ -66,4 +66,11 @@
     background: transparent;
     margin: 5px;
     margin-right: 10px;
+}
+
+@media screen and (min-width: 0) and (max-width: 1260) {
+    .details-main-div{
+        width: 80%;
+        margin: auto;
+    }
 }
