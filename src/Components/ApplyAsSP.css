@@ -39,3 +39,10 @@
     font-size: 18px;
     color: #18264f;
 }
+
+@media screen and (min-width: 0px) and (max-width: 550px) {
+    .apply-main-div{
+        width: 95%;
+        margin: 150px auto;
+    }
+}
