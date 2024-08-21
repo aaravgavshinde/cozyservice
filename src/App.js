@@ -23,6 +23,8 @@ import Doctor from './Components/All Services/Doctor';
 import Mess from './Components/All Services/Mess';
 import Mponline from './Components/All Services/Mponline';
 import Auto from './Components/All Services/Auto';
+// Error 404 page
+import Error from './Components/Error';
 
 function App() {
 
@@ -65,6 +67,7 @@ function App() {
         <Route exact path='/mess' element={<Mess />} />
         <Route exact path='/mponline' element={<Mponline />} />
         <Route exact path='/auto' element={<Auto />} />
+        <Route exact path='*' element={<Error />} />
       </Routes>
       <Footer />
     </div>

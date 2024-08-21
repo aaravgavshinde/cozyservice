@@ -1,0 +1,20 @@
+.error-main-div{
+    width: 90%;
+    margin: auto;
+}
+
+.error-img{
+    width: 500px;
+    height: auto;
+    margin-top: 160px;
+}
+
+/* Making Responsive */
+@media screen and (min-width: 0px) and (max-width: 779px) {
+    .error-img{
+        width: 300px;
+    }
+    .error-head{
+        font-size: 20px;
+    }
+}
